@@ -4,6 +4,12 @@ Convocatoria de docentes para la universidad de la amazonia.
 
 ## **Requerimientos**
 
+### **Convocatoria:**
+  - Numero de convocatoria.
+  - Descripción.
+  - Intensidad horaria (horas por semestre).
+  - Lugar.
+
 ### **Docentes:**
   - Datos personales:
     - Primer apellido.
