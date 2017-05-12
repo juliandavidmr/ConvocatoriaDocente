@@ -7,27 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConvocatoriaDocente.Views.Convocatoria {
+namespace ConvocatoriaDocente.Views.Docente {
     
     
     public partial class Crear {
         
         /// <summary>
-        /// FormPanel1 control.
+        /// Window1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.FormPanel FormPanel1;
+        protected global::Ext.Net.Window Window1;
         
         /// <summary>
-        /// Button1 control.
+        /// TipoDocumento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Button Button1;
+        protected global::Ext.Net.SelectBox TipoDocumento;
+        
+        /// <summary>
+        /// Ciudad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.SelectBox Ciudad;
+        
+        /// <summary>
+        /// Nacionalidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.SelectBox Nacionalidad;
     }
 }

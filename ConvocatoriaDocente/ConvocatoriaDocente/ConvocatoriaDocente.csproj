@@ -57,6 +57,9 @@
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\..\..\..\..\Downloads\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -148,8 +151,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Default.aspx" />
-    <Content Include="Default2.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -194,6 +195,9 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Convocatoria\Crear.aspx" />
+    <Content Include="Views\Docente\Crear.aspx" />
+    <Content Include="Views\Home\Default.aspx" />
+    <Content Include="Views\Home\Home.aspx" />
     <Content Include="Views\Inscripcion\Crear.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -216,16 +220,34 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\archivo.cs" />
+    <Compile Include="Models\BD\Parametro.cs" />
+    <Compile Include="Models\BD\Transaction.cs" />
+    <Compile Include="Models\ciudad.cs" />
+    <Compile Include="Models\competencia.cs" />
+    <Compile Include="Models\BD\Conexion.cs" />
+    <Compile Include="Models\departamento.cs" />
+    <Compile Include="Models\docencia.cs" />
+    <Compile Include="Models\docencia_detalle.cs" />
+    <Compile Include="Models\docente.cs" />
+    <Compile Include="Models\inscripcion.cs" />
+    <Compile Include="Models\investigacion.cs" />
+    <Compile Include="Models\investigacion_detalle.cs" />
+    <Compile Include="Models\pais.cs" />
+    <Compile Include="Models\perfil.cs" />
+    <Compile Include="Models\personal.cs" />
+    <Compile Include="Models\personal_detalle.cs" />
+    <Compile Include="Models\produccion.cs" />
+    <Compile Include="Models\produccion_detalle.cs" />
+    <Compile Include="Models\profesion.cs" />
+    <Compile Include="Models\profesional.cs" />
+    <Compile Include="Models\profesional_detalle.cs" />
+    <Compile Include="Models\soporte.cs" />
+    <Compile Include="Models\tipo_documento.cs" />
+    <Compile Include="Models\tipo_profesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -255,6 +277,27 @@
     <Compile Include="Views\Convocatoria\Crear.aspx.designer.cs">
       <DependentUpon>Crear.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Docente\Crear.aspx.cs">
+      <DependentUpon>Crear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Docente\Crear.aspx.designer.cs">
+      <DependentUpon>Crear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Inscripcion\Crear.aspx.cs">
       <DependentUpon>Crear.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,7 +308,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Docente\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
