@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace ConvocatoriaDocente.Models {
   public class Conexion {
-    private static string stringConnection = ConfigurationManager.ConnectionStrings["oracleConexion2"].ConnectionString;
+    private static string stringConnection = ConfigurationManager.ConnectionStrings["oracleConexion"].ConnectionString;
     OracleConnection Conn = new OracleConnection(stringConnection);
 
     /**

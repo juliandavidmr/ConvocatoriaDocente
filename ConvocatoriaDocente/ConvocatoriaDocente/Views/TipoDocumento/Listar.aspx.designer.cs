@@ -7,72 +7,45 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ConvocatoriaDocente.Views.Home {
+namespace ConvocatoriaDocente.Views.TipoDocumento {
     
     
-    public partial class Default {
+    public partial class Listar {
         
         /// <summary>
-        /// Control West.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.Panel West;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control TreePanel1.
+        /// Control FormGeneral.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.TreePanel TreePanel1;
+        protected global::Ext.Net.FormPanel FormGeneral;
         
         /// <summary>
-        /// Control Button2.
+        /// Control GridGruposInvestigacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.Button Button2;
+        protected global::Ext.Net.GridPanel GridGruposInvestigacion;
         
         /// <summary>
-        /// Control Button3.
+        /// Control StoreTiposDoc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.Button Button3;
-        
-        /// <summary>
-        /// Control StatusBar1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Ext.Net.StatusBar StatusBar1;
-        
-        /// <summary>
-        /// Control TabPanel1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Ext.Net.TabPanel TabPanel1;
-        
-        /// <summary>
-        /// Control Window1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Ext.Net.Panel Window1;
+        protected global::Ext.Net.Store StoreTiposDoc;
     }
 }

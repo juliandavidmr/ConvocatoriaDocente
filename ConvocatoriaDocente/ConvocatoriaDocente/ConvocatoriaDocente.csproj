@@ -58,7 +58,7 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess">
-      <HintPath>..\..\..\..\..\Downloads\Oracle.ManagedDataAccess.dll</HintPath>
+      <HintPath>..\..\..\Visibilidad\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -151,6 +151,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Ext.NET.Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -192,16 +193,16 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Convocatoria\Crear.aspx" />
     <Content Include="Views\Docente\Crear.aspx" />
     <Content Include="Views\Home\Default.aspx" />
     <Content Include="Views\Home\Home.aspx" />
     <Content Include="Views\Inscripcion\Crear.aspx" />
+    <Content Include="Views\TipoDocumento\Crear.aspx" />
+    <Content Include="Views\TipoDocumento\Listar.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
-    <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -249,20 +250,6 @@
     <Compile Include="Models\tipo_documento.cs" />
     <Compile Include="Models\tipo_profesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -304,6 +291,20 @@
     </Compile>
     <Compile Include="Views\Inscripcion\Crear.aspx.designer.cs">
       <DependentUpon>Crear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TipoDocumento\Crear.aspx.cs">
+      <DependentUpon>Crear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TipoDocumento\Crear.aspx.designer.cs">
+      <DependentUpon>Crear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TipoDocumento\Listar.aspx.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TipoDocumento\Listar.aspx.designer.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

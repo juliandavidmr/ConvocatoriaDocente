@@ -1,8 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ConvocatoriaDocente.Views.Home.Default" %>
 
 <script runat="server">
-
-
   protected void Button1_Click(object sender, DirectEventArgs e) {
     X.Msg.Notify(new NotificationConfig {
       Icon = Icon.Accept,
@@ -22,15 +20,13 @@
           Window1.Loader.Url = "../Convocatoria/Crear.aspx";
           TabPanel1.UpdateContent();
           break;
-      }
-      /*X.Msg.Notify(new NotificationConfig {
-        Icon = Icon.Accept,
-        Title = "Working",
-      }).Show();*/
+        case "IdListarTiposDoc":
+          Window1.Loader.Url = "../TipoDocumento/Listar.aspx";
+          TabPanel1.UpdateContent();
+          break;
+      }     
     }
   }
-
-
 </script>
 
 <!DOCTYPE html>
@@ -94,7 +90,7 @@
             runat="server"
             Flex="2"
             Icon="BookOpen"
-            Title="Catalog"
+            Title="Convocatoria"
             Shadow="true"
             AutoScroll="true">
             <TopBar>
@@ -119,12 +115,34 @@
                 <Children>
                   <ext:Node Text="Docente" NodeID="ROOT1" Icon="UserGray">
                     <Children>
-                      <ext:Node NodeID="IdInscribirDocente" EmptyChildren="true" Text="Inscribir docente" Expandable="false" />
+                      <ext:Node 
+                        NodeID="IdInscribirDocente" 
+                        EmptyChildren="true" 
+                        Text="Inscribir docente" 
+                        Expandable="false" />
                     </Children>
                   </ext:Node>
-                  <ext:Node Text="Convocatoria" NodeID="ROOT2" Icon="UserGray">
+                  <ext:Node 
+                    Text="Convocatoria" 
+                    NodeID="ROOT2" 
+                    Icon="UserGray">
                     <Children>
-                      <ext:Node NodeID="IdCrearConvocatoria" EmptyChildren="true" Text="Convocatoria" Expandable="false"></ext:Node>
+                      <ext:Node 
+                        NodeID="IdCrearConvocatoria" 
+                        EmptyChildren="true" 
+                        Text="Convocatoria" 
+                        Expandable="false"
+                        Icon="None"></ext:Node>
+                    </Children>
+                  </ext:Node>
+                  <ext:Node
+                    Text="Tipo de documento" Icon="BookAddresses">
+                    <Children>
+                      <ext:Node
+                        NodeID="IdListarTiposDoc"
+                        Text="Listar tipos de documentos"
+                        Expandable="false"
+                        EmptyChildren="true"></ext:Node>
                     </Children>
                   </ext:Node>
                 </Children>
@@ -139,12 +157,12 @@
                 Handler="addTab(#{IdInscribirDocente}, 'idClt', 'http://ext.net', this);">
               </ItemClick>
               <ItemClick
-                Handler="#{StatusBar1}.setStatus({text: 'Node Selected: <b>' + record.data.text + '<br />', clear: false});" />
+                Handler="#{StatusBar1}.setStatus({text: 'Selección actual: <b>' + record.data.text + '<br />', clear: false});" />
               <ItemExpand
-                Handler="#{StatusBar1}.setStatus({text: 'Node Expanded: <b>' + item.data.text + '<br />', clear: false});"
+                Handler="#{StatusBar1}.setStatus({text: 'Selección actual: <b>' + item.data.text + '<br />', clear: false});"
                 Buffer="30" />
               <ItemCollapse
-                Handler="#{StatusBar1}.setStatus({text: 'Node Collapsed: <b>' + item.data.text + '<br />', clear: false});"
+                Handler="#{StatusBar1}.setStatus({text: 'Selección actual: <b>' + item.data.text + '<br />', clear: false});"
                 Buffer="30" />
             </Listeners>
             <DirectEvents>
@@ -159,19 +177,25 @@
         </Items>
       </ext:Panel>
 
-      <ext:Panel runat="server" Region="Center" BodyPadding="5">
+      <ext:Panel 
+        runat="server" 
+        Region="Center" 
+        BodyPadding="5">
         <Items>
-
 
           <ext:Panel runat="server" Layout="HBoxLayout">
             <Items>
-
-              <ext:TabPanel ID="TabPanel1" runat="server" Flex="7" Title="PANELES" Region="Center">
+              <ext:TabPanel
+                ID="TabPanel1" 
+                runat="server" 
+                Flex="7"
+                Header="false"
+                Region="Center">
                 <Items>
                   <ext:Panel
                     ID="Window1"
                     runat="server"
-                    Title="Welcome to Ext.NET"
+                    Title="Tab"
                     Height="600"
                     Width="900"
                     Frame="true"
@@ -180,7 +204,7 @@
                     BodyPadding="5"
                     DefaultButton="0"
                     AutoRender="true"
-                    Layout="AnchorLayout"
+                    Layout="FitLayout"
                     DefaultAnchor="100%">
                     <Loader runat="server" AutoLoad="true" Mode="Frame" Url="Home.aspx"></Loader>
                     <Items>
