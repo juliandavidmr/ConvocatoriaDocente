@@ -7,10 +7,28 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ConvocatoriaDocente.Views.Docente {
+namespace ConvocatoriaDocente.Views.Competencias.Personal {
     
     
-    public partial class Crear {
+    public partial class CrearDetalle {
+        
+        /// <summary>
+        /// Control form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Control Window2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Window Window2;
         
         /// <summary>
         /// Control Window1.
@@ -22,57 +40,57 @@ namespace ConvocatoriaDocente.Views.Docente {
         protected global::Ext.Net.Window Window1;
         
         /// <summary>
-        /// Control TiposDocumento.
+        /// Control NumeroIdent.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.Store TiposDocumento;
+        protected global::Ext.Net.TextField NumeroIdent;
         
         /// <summary>
-        /// Control NumDocumento.
+        /// Control Universidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.TextField NumDocumento;
+        protected global::Ext.Net.TextField Universidad;
         
         /// <summary>
-        /// Control PaisActualSelect.
+        /// Control Titulacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.SelectBox PaisActualSelect;
+        protected global::Ext.Net.TextField Titulacion;
         
         /// <summary>
-        /// Control PaisActual.
+        /// Control FechaGraduacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.Store PaisActual;
+        protected global::Ext.Net.DateField FechaGraduacion;
         
         /// <summary>
-        /// Control Ciudad.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.Store Ciudad;
+        protected global::Ext.Net.Button Button1;
         
         /// <summary>
-        /// Control Nacionalidad.
+        /// Control PersonalDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.Store Nacionalidad;
+        protected global::Ext.Net.Store PersonalDetalle;
     }
 }

@@ -25,6 +25,13 @@ namespace ConvocatoriaDocente.Models {
       return conexion.realizarConsulta("PR_SELECT_DEPARTAMENTO ", "CR_RESULT ", null);
     }
 
+    public DataTable get_departamento(int idpais) {
+      Parametro[] p = new Parametro[1];
+      p[0] = new Parametro("IDPAIS", idpais);
+      return conexion.realizarConsulta("PR_SELECT_DEPARTAMENTO_BY_PAIS", "CR_RESULT ", p);
+    }
+
+
     public Parametro[] getParameters(departamento obj) {
       Parametro[] param = new Parametro[4];
       param[0] = new Parametro("DPTO_IDDEPARTAMENTO", obj.dpto_iddepartamento);

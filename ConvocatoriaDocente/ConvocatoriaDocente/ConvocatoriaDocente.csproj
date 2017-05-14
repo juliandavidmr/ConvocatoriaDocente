@@ -194,6 +194,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\Competencias\Personal\CrearDetalle.aspx" />
     <Content Include="Views\Convocatoria\Crear.aspx" />
     <Content Include="Views\Docente\Crear.aspx" />
     <Content Include="Views\Home\Default.aspx" />
@@ -249,6 +250,7 @@
     <Compile Include="Models\soporte.cs" />
     <Compile Include="Models\tipo_documento.cs" />
     <Compile Include="Models\tipo_profesion.cs" />
+    <Compile Include="Models\_CONST.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -256,6 +258,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Competencias\Personal\CrearDetalle.aspx.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Competencias\Personal\CrearDetalle.aspx.designer.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Convocatoria\Crear.aspx.cs">
       <DependentUpon>Crear.aspx</DependentUpon>

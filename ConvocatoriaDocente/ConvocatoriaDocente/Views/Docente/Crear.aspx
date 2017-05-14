@@ -6,9 +6,6 @@
 <head runat="server">
   <title></title>
   <link href="/resources/css/examples.css" rel="stylesheet" />
-  <style type="text/css">
-    
-  </style>
 </head>
 <body>
   <form runat="server">
@@ -73,7 +70,7 @@
         </ext:TextField>
 
         <ext:SelectBox
-          runat="server"          
+          runat="server"
           DisplayField="TPDC_NOMBRE"
           ValueField="TPDC_IDTIPODOCUMENTO"
           FieldLabel="Tipo de documento"
@@ -94,26 +91,27 @@
 
         <ext:TextField
           runat="server"
+          ID="NumDocumento"
           FieldLabel="Documento de identidad"
           InputType="Number"
           Note="Documento de identidad">
         </ext:TextField>
 
         <ext:SelectBox
-          ID="Ciudad"
           runat="server"
-          DisplayField="state"
-          ValueField="abbr"
+          ID="PaisActualSelect"
+          OnDirectChange="Ciudad_ItemSelected"
+          DisplayField="PAIS_NOMBRE"
+          ValueField="PAIS_IDPAIS"
           FieldLabel="Pais"
-          EmptyText="Ciudad de residencia">
+          EmptyText="Pais actual">
           <Store>
-            <ext:Store runat="server">
+            <ext:Store ID="PaisActual" runat="server">
               <Model>
                 <ext:Model runat="server">
                   <Fields>
-                    <ext:ModelField Name="abbr" />
-                    <ext:ModelField Name="state" />
-                    <ext:ModelField Name="nick" />
+                    <ext:ModelField Name="PAIS_IDPAIS" />
+                    <ext:ModelField Name="PAIS_NOMBRE" />
                   </Fields>
                 </ext:Model>
               </Model>
@@ -122,26 +120,51 @@
         </ext:SelectBox>
 
         <ext:SelectBox
-          ID="Nacionalidad"
           runat="server"
-          DisplayField="state"
-          ValueField="abbr"
-          FieldLabel="Nacionalidad"
-          EmptyText="Nacionalidad">
+          DisplayField="DPTO_NOMBRE"
+          ValueField="DPTO_IDDEPARTAMENTO"
+          FieldLabel="Ciudad actual"
+          EmptyText="Ciudad de residencia">
           <Store>
-            <ext:Store runat="server">
+            <ext:Store ID="Ciudad" runat="server">
               <Model>
                 <ext:Model runat="server">
                   <Fields>
-                    <ext:ModelField Name="abbr" />
-                    <ext:ModelField Name="state" />
-                    <ext:ModelField Name="nick" />
+                    <ext:ModelField Name="DPTO_IDDEPARTAMENTO" />
+                    <ext:ModelField Name="DPTO_NOMBRE" />
                   </Fields>
                 </ext:Model>
               </Model>
             </ext:Store>
           </Store>
         </ext:SelectBox>
+
+        <ext:SelectBox
+          runat="server"
+          DisplayField="PAIS_NOMBRE"
+          ValueField="PAIS_IDPAIS"
+          FieldLabel="Nacionalidad"
+          EmptyText="Nacionalidad">
+          <Store>
+            <ext:Store ID="Nacionalidad" runat="server">
+              <Model>
+                <ext:Model runat="server">
+                  <Fields>
+                    <ext:ModelField Name="PAIS_IDPAIS" />
+                    <ext:ModelField Name="PAIS_NOMBRE" />
+                  </Fields>
+                </ext:Model>
+              </Model>
+            </ext:Store>
+          </Store>
+        </ext:SelectBox>
+
+        <ext:Button
+          runat="server"
+          Text="Continuar"
+          AutoLoadingState="true"
+          Region="East"
+          OnDirectClick="Continuar_Click" />
       </Items>
     </ext:Window>
   </form>
