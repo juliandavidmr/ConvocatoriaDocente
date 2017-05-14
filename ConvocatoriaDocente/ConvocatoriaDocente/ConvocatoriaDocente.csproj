@@ -194,7 +194,12 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\Competencias\Produccion\CrearDetalle.aspx" />
+    <Content Include="Views\Competencias\Profesional\CrearDetalle.aspx" />
+    <Content Include="Views\Competencias\Docencia\CrearDetalle.aspx" />
+    <Content Include="Views\Competencias\Investigacion\CrearDetalle.aspx" />
     <Content Include="Views\Competencias\Personal\CrearDetalle.aspx" />
+    <Content Include="Views\Competencias\Resumen.aspx" />
     <Content Include="Views\Convocatoria\Crear.aspx" />
     <Content Include="Views\Docente\Crear.aspx" />
     <Content Include="Views\Home\Default.aspx" />
@@ -259,12 +264,47 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Competencias\Produccion\CrearDetalle.aspx.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Competencias\Produccion\CrearDetalle.aspx.designer.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Competencias\Profesional\CrearDetalle.aspx.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Competencias\Profesional\CrearDetalle.aspx.designer.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Competencias\Docencia\CrearDetalle.aspx.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Competencias\Docencia\CrearDetalle.aspx.designer.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Competencias\Investigacion\CrearDetalle.aspx.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Competencias\Investigacion\CrearDetalle.aspx.designer.cs">
+      <DependentUpon>CrearDetalle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Competencias\Personal\CrearDetalle.aspx.cs">
       <DependentUpon>CrearDetalle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Competencias\Personal\CrearDetalle.aspx.designer.cs">
       <DependentUpon>CrearDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Competencias\Resumen.aspx.cs">
+      <DependentUpon>Resumen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Competencias\Resumen.aspx.designer.cs">
+      <DependentUpon>Resumen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Convocatoria\Crear.aspx.cs">
       <DependentUpon>Crear.aspx</DependentUpon>

@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ConvocatoriaDocente.Views.Competencias.Personal {
+namespace ConvocatoriaDocente.Views.Competencias.Produccion {
     
     
     public partial class CrearDetalle {
@@ -40,31 +40,40 @@ namespace ConvocatoriaDocente.Views.Competencias.Personal {
         protected global::Ext.Net.TextField NumeroIdent;
         
         /// <summary>
-        /// Control Universidad.
+        /// Control Producto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.TextField Universidad;
+        protected global::Ext.Net.TextField Producto;
         
         /// <summary>
-        /// Control Titulacion.
+        /// Control Identificador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.TextField Titulacion;
+        protected global::Ext.Net.TextField Identificador;
         
         /// <summary>
-        /// Control FechaGraduacion.
+        /// Control Volumen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.DateField FechaGraduacion;
+        protected global::Ext.Net.TextField Volumen;
+        
+        /// <summary>
+        /// Control FechaEdicion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.DateField FechaEdicion;
         
         /// <summary>
         /// Control Button1.
@@ -76,12 +85,12 @@ namespace ConvocatoriaDocente.Views.Competencias.Personal {
         protected global::Ext.Net.Button Button1;
         
         /// <summary>
-        /// Control PersonalDetalle.
+        /// Control InvestigacionDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.Store PersonalDetalle;
+        protected global::Ext.Net.Store InvestigacionDetalle;
     }
 }

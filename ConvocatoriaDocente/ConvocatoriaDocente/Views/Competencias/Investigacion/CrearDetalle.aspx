@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearDetalle.aspx.cs" Inherits="ConvocatoriaDocente.Views.Competencias.Personal.CrearDetalle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearDetalle.aspx.cs" Inherits="ConvocatoriaDocente.Views.Competencias.Investigacion.CrearDetalle" %>
 
 <!DOCTYPE html>
 
@@ -12,12 +12,44 @@
     <ext:ResourceManager runat="server" />
 
     <ext:Window
+      ID="Window2"
+      runat="server"
+      Width="500"
+      Height="470"
+      Title="Example">
+      <Loader
+        runat="server"
+        Url="http://ext.net/"
+        Mode="Frame">
+        <LoadMask ShowMask="true" Msg="Custom Loading Message..." />
+      </Loader>
+      <TopBar>
+        <ext:Toolbar runat="server">
+          <Items>
+            <ext:ToolbarFill />
+            <ext:Button runat="server" Text="Load Ext.NET forums" Icon="Application">
+              <Listeners>
+                <Click Handler="#{Window1}.load('http://forums.ext.net/');" />
+              </Listeners>
+            </ext:Button>
+
+            <ext:Button runat="server" Text="Refresh" Icon="ArrowRotateClockwise">
+              <Listeners>
+                <Click Handler="#{Window1}.reload();" />
+              </Listeners>
+            </ext:Button>
+          </Items>
+        </ext:Toolbar>
+      </TopBar>
+    </ext:Window>
+
+    <ext:Window
       ID="Window1"
       runat="server"
       Width="700"
       Floatable="false"
       Height="800"
-      Title="Competencias personales"
+      Title="Competencias en investigación"
       Closable="false"
       Layout="Form"
       AutoScroll="true"
@@ -42,39 +74,42 @@
 
             <ext:TextField
               runat="server"
-              ID="Universidad"
-              FieldLabel="Universidad"
+              ID="Financiadora"
+              FieldLabel="Financiadora"
               Editable="true"
               Vtype="text"
               AllowBlank="false"
-              ValidateBlank="true"
-              MinLength="3"
-              BlankText="Nombre completo de la Universidad">
+              BlankText="Entidad financiador o patrocinador">
             </ext:TextField>
 
             <ext:TextField
               runat="server"
-              ID="Titulacion"
-              FieldLabel="Titulación"
+              ID="NombreInvestigacion"
+              FieldLabel="Nombre de la investigación"
               Editable="true"
               Vtype="text"
               AllowBlank="false"
-              ValidateBlank="true"
-              MinLength="10"
-              BlankText="Nombre completo del titulo obtenido">
+              BlankText="Descripcion de la investigación">
             </ext:TextField>
 
             <ext:DateField
               runat="server"
-              ID="FechaGraduacion"
+              ID="FechaInicio"
               Type="Date"
               ValidateBlank="true"
-              FieldLabel="Fecha de graduación" />
+              FieldLabel="Fecha de inicio" />
+
+            <ext:DateField
+              runat="server"
+              ID="FechaFinal"
+              Type="Date"
+              ValidateBlank="true"
+              FieldLabel="Fecha de finalización" />
 
             <ext:Button
               ID="Button1"
               runat="server"
-              Text="Añadir estudio"
+              Text="Añadir investigación"
               Icon="Add"
               OnDirectClick="AddDetalle_Click" />
           </Items>
@@ -85,7 +120,7 @@
 
             <ext:GridPanel runat="server" MarginSpec="0 10 30">
               <Store>
-                <ext:Store AutoDataBind="true" runat="server" ID="PersonalDetalle">
+                <ext:Store AutoDataBind="true" runat="server" ID="InvestigacionDetalle">
                   <Model>
                     <ext:Model runat="server">
                       <Fields>

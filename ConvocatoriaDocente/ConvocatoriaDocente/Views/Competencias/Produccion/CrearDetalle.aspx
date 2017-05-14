@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearDetalle.aspx.cs" Inherits="ConvocatoriaDocente.Views.Competencias.Personal.CrearDetalle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearDetalle.aspx.cs" Inherits="ConvocatoriaDocente.Views.Competencias.Produccion.CrearDetalle" %>
 
 <!DOCTYPE html>
 
@@ -17,7 +17,7 @@
       Width="700"
       Floatable="false"
       Height="800"
-      Title="Competencias personales"
+      Title="Producción academica"
       Closable="false"
       Layout="Form"
       AutoScroll="true"
@@ -42,39 +42,45 @@
 
             <ext:TextField
               runat="server"
-              ID="Universidad"
-              FieldLabel="Universidad"
+              ID="Producto"
+              FieldLabel="Nombre del producto"
               Editable="true"
               Vtype="text"
               AllowBlank="false"
-              ValidateBlank="true"
-              MinLength="3"
-              BlankText="Nombre completo de la Universidad">
+              BlankText="Nombre del producto">
             </ext:TextField>
 
             <ext:TextField
               runat="server"
-              ID="Titulacion"
-              FieldLabel="Titulación"
+              ID="Identificador"
+              FieldLabel="Indentificador (ISBN/ISSN)"
               Editable="true"
               Vtype="text"
               AllowBlank="false"
-              ValidateBlank="true"
-              MinLength="10"
-              BlankText="Nombre completo del titulo obtenido">
+              BlankText="Indentificador (ISBN/ISSN)">
+            </ext:TextField>
+
+            <ext:TextField
+              runat="server"
+              ID="Volumen"
+              FieldLabel="Volúmen"
+              Editable="true"
+              Vtype="text"
+              AllowBlank="false"
+              BlankText="Volúmen">
             </ext:TextField>
 
             <ext:DateField
               runat="server"
-              ID="FechaGraduacion"
+              ID="FechaEdicion"
               Type="Date"
               ValidateBlank="true"
-              FieldLabel="Fecha de graduación" />
+              FieldLabel="Fecha de edición" />
 
             <ext:Button
               ID="Button1"
               runat="server"
-              Text="Añadir estudio"
+              Text="Añadir investigación"
               Icon="Add"
               OnDirectClick="AddDetalle_Click" />
           </Items>
@@ -85,7 +91,7 @@
 
             <ext:GridPanel runat="server" MarginSpec="0 10 30">
               <Store>
-                <ext:Store AutoDataBind="true" runat="server" ID="PersonalDetalle">
+                <ext:Store AutoDataBind="true" runat="server" ID="InvestigacionDetalle">
                   <Model>
                     <ext:Model runat="server">
                       <Fields>
