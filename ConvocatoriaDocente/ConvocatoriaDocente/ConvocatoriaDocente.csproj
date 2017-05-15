@@ -240,6 +240,7 @@
     <Compile Include="Models\docencia.cs" />
     <Compile Include="Models\docencia_detalle.cs" />
     <Compile Include="Models\docente.cs" />
+    <Compile Include="Models\Generics\SetDataTable.cs" />
     <Compile Include="Models\inscripcion.cs" />
     <Compile Include="Models\investigacion.cs" />
     <Compile Include="Models\investigacion_detalle.cs" />
