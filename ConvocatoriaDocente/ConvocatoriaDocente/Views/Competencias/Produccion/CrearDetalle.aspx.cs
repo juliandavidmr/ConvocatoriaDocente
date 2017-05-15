@@ -13,7 +13,7 @@ namespace ConvocatoriaDocente.Views.Competencias.Produccion {
     }
 
     protected void Continuar_DirectClick(object sender, Ext.Net.DirectEventArgs e) {
-      Response.Redirect("../Resumen.aspx");
+      Response.Redirect("../Investigacion/CrearDetalle.aspx");
     }
 
     protected void AddDetalle_Click(object sender, DirectEventArgs e) {

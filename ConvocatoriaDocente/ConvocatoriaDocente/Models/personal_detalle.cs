@@ -7,43 +7,39 @@ namespace ConvocatoriaDocente.Models {
   public class personal_detalle {
     public int tppr_idtipoprofesion { get; set; }
     public string prdt_universidad { get; set; }
-    public string prdt_grado { get; set; }
+    public DateTime prdt_grado { get; set; }
     public int prdt_puntaje { get; set; }
     public int prdt_puntaje_max { get; set; }
-    public int personal_prsl_idpersonal { get; set; }
+    public string prdt_titulo { get; set; }
+    public int prsl_idpersonal { get; set; }
 
     Conexion conexion = new Conexion();
 
     public personal_detalle() { }
 
-    public personal_detalle(int tppr_idtipoprofesion, string prdt_universidad, string prdt_grado, int prdt_puntaje, int prdt_puntaje_max, int personal_prsl_idpersonal) {
-      this.tppr_idtipoprofesion = tppr_idtipoprofesion;
-      this.prdt_universidad = prdt_universidad;
-      this.prdt_grado = prdt_grado;
-      this.prdt_puntaje = prdt_puntaje;
-      this.prdt_puntaje_max = prdt_puntaje_max;
-      this.personal_prsl_idpersonal = personal_prsl_idpersonal;
-    }
-
     public DataTable get_personal_detalle() {
-      return conexion.realizarConsulta("PR_SELECT_PERSONAL_DETALLE ", "CR_RESULT ", null);
+      return conexion.realizarConsulta("PR_SELECT_PERSONAL_DET", "CR_RESULT ", null);
     }
 
     public Parametro[] getParameters(personal_detalle obj) {
-      Parametro[] param = new Parametro[7];
-      param[0] = new Parametro("TPPR_IDTIPOPROFESION", obj.tppr_idtipoprofesion);
-      param[1] = new Parametro("PRDT_UNIVERSIDAD", obj.prdt_universidad);
-      param[2] = new Parametro("PRDT_GRADO", obj.prdt_grado);
-      param[3] = new Parametro("PRDT_PUNTAJE", obj.prdt_puntaje);
-      param[4] = new Parametro("PRDT_PUNTAJE_MAX", obj.prdt_puntaje_max);
-      param[5] = new Parametro("PERSONAL_PRSL_IDPERSONAL", obj.personal_prsl_idpersonal);
+      int i = 0;
+      Parametro[] param = new Parametro[5];
+      param[i++] = new Parametro("IDTIPOPROFESION", obj.tppr_idtipoprofesion);
+      param[i++] = new Parametro("PRDT_UNIVERSIDAD", obj.prdt_universidad);
+      param[i++] = new Parametro("PRDT_GRADO", obj.prdt_grado);
+      param[i++] = new Parametro("IDPERSONAL", obj.prsl_idpersonal);
+      param[i++] = new Parametro("PRDT_TITULO", obj.prdt_titulo);
       return param;
     }
 
     public bool insert_personal_detalle(personal_detalle obj) {
       Transaction[] list = new Transaction[1];
-      list[0] = new Transaction("PR_INSERT_PERSONAL_DETALLE", getParameters(obj));
+      list[0] = new Transaction("PR_INSERT_PERSONAL_DET", getParameters(obj));
       return conexion.realizarTransaccion(list);
+    }
+
+    public bool insert_personal_detalle() {
+      return insert_personal_detalle(this);
     }
 
     public bool update_personal_detalle(personal_detalle obj) {

@@ -12,38 +12,6 @@
     <ext:ResourceManager runat="server" />
 
     <ext:Window
-      ID="Window2"
-      runat="server"
-      Width="500"
-      Height="470"
-      Title="Example">
-      <Loader
-        runat="server"
-        Url="http://ext.net/"
-        Mode="Frame">
-        <LoadMask ShowMask="true" Msg="Custom Loading Message..." />
-      </Loader>
-      <TopBar>
-        <ext:Toolbar runat="server">
-          <Items>
-            <ext:ToolbarFill />
-            <ext:Button runat="server" Text="Load Ext.NET forums" Icon="Application">
-              <Listeners>
-                <Click Handler="#{Window1}.load('http://forums.ext.net/');" />
-              </Listeners>
-            </ext:Button>
-
-            <ext:Button runat="server" Text="Refresh" Icon="ArrowRotateClockwise">
-              <Listeners>
-                <Click Handler="#{Window1}.reload();" />
-              </Listeners>
-            </ext:Button>
-          </Items>
-        </ext:Toolbar>
-      </TopBar>
-    </ext:Window>
-
-    <ext:Window
       ID="Window1"
       runat="server"
       Width="700"
@@ -124,8 +92,10 @@
                   <Model>
                     <ext:Model runat="server">
                       <Fields>
-                        <ext:ModelField Name="TPDC_IDTIPODOCUMENTO" runat="server"></ext:ModelField>
-                        <ext:ModelField Name="TPDC_NOMBRE" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="INVD_FINANCIADORA" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="INVD_FECHA_INICIO" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="INVD_FECHA_FIN" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="INVD_PUNTAJE" runat="server"></ext:ModelField>
                       </Fields>
                     </ext:Model>
                   </Model>
@@ -134,10 +104,10 @@
               <ColumnModel>
                 <Columns>
                   <ext:RowNumbererColumn runat="server"></ext:RowNumbererColumn>
-                  <ext:Column runat="server" Flex="2" DataIndex="TPDC_IDTIPODOCUMENTO" Text="Id">
-                  </ext:Column>
-                  <ext:Column runat="server" Flex="5" DataIndex="TPDC_NOMBRE" Text="Nombre">
-                  </ext:Column>
+                  <ext:Column runat="server" Flex="5" DataIndex="INVD_FINANCIADORA" Text="Finaciadora/Patrocinador"></ext:Column>
+                  <ext:Column runat="server" Flex="3" DataIndex="INVD_FECHA_INICIO" Text="Inicio"></ext:Column>
+                  <ext:Column runat="server" Flex="3" DataIndex="INVD_FECHA_FIN" Text="Fin"></ext:Column>
+                  <ext:Column runat="server" Flex="1" DataIndex="INVD_PUNTAJE" Text="Puntaje"></ext:Column>
                 </Columns>
               </ColumnModel>
             </ext:GridPanel>

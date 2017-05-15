@@ -36,9 +36,29 @@
               Editable="false"
               Enabled="false"
               Vtype="text"
-              ValidateBlank="false"
-              BlankText="Numero de identficación">
+              ValidateBlank="false">
             </ext:TextField>
+
+            <ext:SelectBox
+              runat="server"
+              ID="TipoProfesionSelect"
+              DisplayField="TPPR_NOMBRE"
+              ValueField="TPPR_IDTIPOPROFESION"
+              FieldLabel="Estudio realizado"
+              EmptyText="Seleccione el tipo de estudio realizado.">
+              <Store>
+                <ext:Store ID="TiposProfesion" runat="server">
+                  <Model>
+                    <ext:Model runat="server">
+                      <Fields>
+                        <ext:ModelField Name="TPPR_IDTIPOPROFESION" />
+                        <ext:ModelField Name="TPPR_NOMBRE" />
+                      </Fields>
+                    </ext:Model>
+                  </Model>
+                </ext:Store>
+              </Store>
+            </ext:SelectBox>
 
             <ext:TextField
               runat="server"
@@ -49,6 +69,7 @@
               AllowBlank="false"
               ValidateBlank="true"
               MinLength="3"
+              MaxLength="45"
               BlankText="Nombre completo de la Universidad">
             </ext:TextField>
 
@@ -82,15 +103,16 @@
 
         <ext:Panel runat="server" Header="false" Layout="FitLayout">
           <Items>
-
             <ext:GridPanel runat="server" MarginSpec="0 10 30">
               <Store>
                 <ext:Store AutoDataBind="true" runat="server" ID="PersonalDetalle">
                   <Model>
                     <ext:Model runat="server">
                       <Fields>
-                        <ext:ModelField Name="TPDC_IDTIPODOCUMENTO" runat="server"></ext:ModelField>
-                        <ext:ModelField Name="TPDC_NOMBRE" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PRDT_UNIVERSIDAD" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PRDT_GRADO" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PRDT_TITULO" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PRDT_PUNTAJE" runat="server"></ext:ModelField>
                       </Fields>
                     </ext:Model>
                   </Model>
@@ -99,10 +121,10 @@
               <ColumnModel>
                 <Columns>
                   <ext:RowNumbererColumn runat="server"></ext:RowNumbererColumn>
-                  <ext:Column runat="server" Flex="2" DataIndex="TPDC_IDTIPODOCUMENTO" Text="Id">
-                  </ext:Column>
-                  <ext:Column runat="server" Flex="5" DataIndex="TPDC_NOMBRE" Text="Nombre">
-                  </ext:Column>
+                  <ext:Column runat="server" Flex="3" DataIndex="PRDT_UNIVERSIDAD" Text="Universidad/Instituto"></ext:Column>
+                  <ext:Column runat="server" Flex="4" DataIndex="PRDT_TITULO" Text="Titulo"></ext:Column>
+                  <ext:Column runat="server" Flex="2" DataIndex="PRDT_GRADO" Text="Fecha"></ext:Column>
+                  <ext:Column runat="server" Flex="2" DataIndex="PRDT_PUNTAJE" Text="Puntaje"></ext:Column>
                 </Columns>
               </ColumnModel>
             </ext:GridPanel>

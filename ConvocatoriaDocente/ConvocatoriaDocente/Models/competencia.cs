@@ -25,6 +25,12 @@ namespace ConvocatoriaDocente.Models {
       return conexion.realizarConsulta("PR_SELECT_COMPETENCIA ", "CR_RESULT ", null);
     }
 
+    public DataTable get_competencia_docente(int id_docente) {
+      Parametro[] p = new Parametro[1];
+      p[0] = new Parametro("ID_DOCENTE", id_docente);
+      return conexion.realizarConsulta("PR_SELECT_COMPETENCIA_DOCENTE ", "CR_RESULT ", p);
+    }
+
     public Parametro[] getParameters(competencia obj) {
       int i = 0;
       Parametro[] param = new Parametro[13];

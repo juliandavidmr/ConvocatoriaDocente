@@ -40,6 +40,24 @@ namespace ConvocatoriaDocente.Views.Competencias.Personal {
         protected global::Ext.Net.TextField NumeroIdent;
         
         /// <summary>
+        /// Control TipoProfesionSelect.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.SelectBox TipoProfesionSelect;
+        
+        /// <summary>
+        /// Control TiposProfesion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Store TiposProfesion;
+        
+        /// <summary>
         /// Control Universidad.
         /// </summary>
         /// <remarks>

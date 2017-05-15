@@ -57,7 +57,29 @@ namespace ConvocatoriaDocente.Views.Docente {
 
     [DirectMethod]
     public void ClickedYES() {
-      X.Msg.Info("Continuando", "Continuando.").Show();
+      X.Msg.Info("Continuando", "Continuando inscripción. Espere unos instantes por favor.").Show();
+
+
+      List<docente> d_registrado = (new docente()).get_docente(NumDocumento.Text).DataTableToList<docente>();
+      if (d_registrado.Count > 0) {
+        int id_docente = d_registrado[0].dcnt_iddocente;
+
+        DataTable compete = (new competencia()).get_competencia_docente(id_docente);
+        if (compete.Rows.Count == 0) { // no Existe una competencia registrada          
+          if (PrepararCompetencias(id_docente)) {
+            compete = (new competencia()).get_competencia_docente(id_docente);
+          }
+        }
+
+        Session[_CONST.SESSION_INFO_DOCENTE] = d_registrado[0];
+        Session[_CONST.SESSION_NUM_DOC] = d_registrado[0].dcnt_num_doc;
+        Session[_CONST.SESSION_ID_DOCENTE] = id_docente;
+        Session[_CONST.SESSION_INFO_COMPETENCIA] = compete.DataTableToList<competencia>()[0];
+
+        Response.Redirect("../Competencias/Personal/CrearDetalle.aspx");
+      } else {
+        X.Msg.Info("Upps!!", ":( Ha ocurido un error al Consultar tus datos.").Show();
+      }
     }
 
     [DirectMethod]
@@ -104,16 +126,19 @@ namespace ConvocatoriaDocente.Views.Docente {
           cidd_idciudad_exp_doc = Convert.ToInt32(CiudadExpedicionSelect.Value)
         };
 
-        if (d.insert_docente()) {       
+        if (d.insert_docente()) {
 
           d_registrado = (new docente()).get_docente(NumDocumento.Text).DataTableToList<docente>();
           if (d_registrado.Count > 0) {
             if (PrepararCompetencias(d_registrado[0].dcnt_iddocente)) {
               X.Msg.Info("Datos personales registrados.", "Informacion personal registrada.").Show();
 
+              competencia compete = (new competencia()).get_competencia_docente(d_registrado[0].dcnt_iddocente).DataTableToList<competencia>()[0];
+
               Session[_CONST.SESSION_INFO_DOCENTE] = d_registrado[0];
               Session[_CONST.SESSION_NUM_DOC] = d_registrado[0].dcnt_num_doc;
               Session[_CONST.SESSION_ID_DOCENTE] = d_registrado[0].dcnt_iddocente;
+              Session[_CONST.SESSION_INFO_COMPETENCIA] = compete;
 
               Response.Redirect("../Competencias/Personal/CrearDetalle.aspx");
             }
