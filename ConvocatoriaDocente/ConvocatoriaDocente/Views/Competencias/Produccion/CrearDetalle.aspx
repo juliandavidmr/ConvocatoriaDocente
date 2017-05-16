@@ -49,6 +49,16 @@
               AllowBlank="false"
               BlankText="Nombre del producto">
             </ext:TextField>
+            
+            <ext:TextField
+              runat="server"
+              ID="TipoProducto"
+              FieldLabel="Tipo de producto"
+              Editable="true"
+              Vtype="text"
+              AllowBlank="false"
+              BlankText="Libro, articulo, revista...">
+            </ext:TextField>
 
             <ext:TextField
               runat="server"
@@ -91,12 +101,16 @@
 
             <ext:GridPanel runat="server" MarginSpec="0 10 30">
               <Store>
-                <ext:Store AutoDataBind="true" runat="server" ID="InvestigacionDetalle">
+                <ext:Store AutoDataBind="true" runat="server" ID="ProduccionDetalle">
                   <Model>
                     <ext:Model runat="server">
                       <Fields>
-                        <ext:ModelField Name="TPDC_IDTIPODOCUMENTO" runat="server"></ext:ModelField>
-                        <ext:ModelField Name="TPDC_NOMBRE" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PNDT_NOMBRE_PRODUCTO" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PNDT_TIPO_PRODUCTO" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PNDT_IDENTIFICADOR_CERT" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PNDT_VOLUMEN" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PNDT_FECHA_EDICION" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PNDT_PUNTAJE" runat="server"></ext:ModelField>
                       </Fields>
                     </ext:Model>
                   </Model>
@@ -105,10 +119,12 @@
               <ColumnModel>
                 <Columns>
                   <ext:RowNumbererColumn runat="server"></ext:RowNumbererColumn>
-                  <ext:Column runat="server" Flex="2" DataIndex="TPDC_IDTIPODOCUMENTO" Text="Id">
-                  </ext:Column>
-                  <ext:Column runat="server" Flex="5" DataIndex="TPDC_NOMBRE" Text="Nombre">
-                  </ext:Column>
+                  <ext:Column runat="server" Flex="3" DataIndex="PNDT_NOMBRE_PRODUCTO" Text="Producto"></ext:Column>
+                  <ext:Column runat="server" Flex="2" DataIndex="PNDT_TIPO_PRODUCTO" Text="Tipo"></ext:Column>
+                  <ext:Column runat="server" Flex="2" DataIndex="PNDT_IDENTIFICADOR_CERT" Text="Identificador"></ext:Column>
+                  <ext:Column runat="server" Flex="1" DataIndex="PNDT_VOLUMEN" Text="Vol"></ext:Column>
+                  <ext:Column runat="server" Flex="2" DataIndex="PNDT_FECHA_EDICION" Text="Edicion"></ext:Column>
+                  <ext:Column runat="server" Flex="1" DataIndex="PNDT_PUNTAJE" Text="Puntaje"></ext:Column>
                 </Columns>
               </ColumnModel>
             </ext:GridPanel>

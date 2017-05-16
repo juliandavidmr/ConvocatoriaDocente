@@ -49,6 +49,15 @@ namespace ConvocatoriaDocente.Views.Competencias.Produccion {
         protected global::Ext.Net.TextField Producto;
         
         /// <summary>
+        /// Control TipoProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.TextField TipoProducto;
+        
+        /// <summary>
         /// Control Identificador.
         /// </summary>
         /// <remarks>
@@ -85,12 +94,12 @@ namespace ConvocatoriaDocente.Views.Competencias.Produccion {
         protected global::Ext.Net.Button Button1;
         
         /// <summary>
-        /// Control InvestigacionDetalle.
+        /// Control ProduccionDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.Store InvestigacionDetalle;
+        protected global::Ext.Net.Store ProduccionDetalle;
     }
 }

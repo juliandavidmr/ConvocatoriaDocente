@@ -98,12 +98,16 @@
 
             <ext:GridPanel runat="server" MarginSpec="0 10 30">
               <Store>
-                <ext:Store AutoDataBind="true" runat="server" ID="InvestigacionDetalle">
+                <ext:Store AutoDataBind="true" runat="server" ID="ProfesionalDetalle">
                   <Model>
                     <ext:Model runat="server">
                       <Fields>
-                        <ext:ModelField Name="TPDC_IDTIPODOCUMENTO" runat="server"></ext:ModelField>
-                        <ext:ModelField Name="TPDC_NOMBRE" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PFDT_INSTITUCION" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PFDT_AREA_TRABAJO" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PFDT_CARGO" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PFDT_FIN" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PFDT_INICIO" runat="server"></ext:ModelField>
+                        <ext:ModelField Name="PFDT_PUNTAJE" runat="server"></ext:ModelField>
                       </Fields>
                     </ext:Model>
                   </Model>
@@ -112,10 +116,12 @@
               <ColumnModel>
                 <Columns>
                   <ext:RowNumbererColumn runat="server"></ext:RowNumbererColumn>
-                  <ext:Column runat="server" Flex="2" DataIndex="TPDC_IDTIPODOCUMENTO" Text="Id">
-                  </ext:Column>
-                  <ext:Column runat="server" Flex="5" DataIndex="TPDC_NOMBRE" Text="Nombre">
-                  </ext:Column>
+                  <ext:Column runat="server" Flex="3" DataIndex="PFDT_INSTITUCION" Text="Id"></ext:Column>
+                  <ext:Column runat="server" Flex="3" DataIndex="PFDT_AREA_TRABAJO" Text="Area"></ext:Column>
+                  <ext:Column runat="server" Flex="5" DataIndex="PFDT_CARGO" Text="Cargo"></ext:Column>
+                  <ext:Column runat="server" Flex="2" DataIndex="PFDT_FIN" Text="Fin"></ext:Column>
+                  <ext:Column runat="server" Flex="2" DataIndex="Inicio" Text="Nombre"></ext:Column>
+                  <ext:Column runat="server" Flex="1" DataIndex="PFDT_PUNTAJE" Text="Puntaje"></ext:Column>
                 </Columns>
               </ColumnModel>
             </ext:GridPanel>

@@ -38,12 +38,13 @@ namespace ConvocatoriaDocente.Views.Competencias.Personal {
       if (getCompetencia() == null) {
         MsgError();
       } else {
-        personal_detalle detalle = new personal_detalle();
-        detalle.tppr_idtipoprofesion = Convert.ToInt32(TipoProfesionSelect.Value);
-        detalle.prdt_universidad = Universidad.Text;
-        detalle.prdt_grado = Convert.ToDateTime(FechaGraduacion.Text);
-        detalle.prsl_idpersonal = getCompetencia().prsl_idpersonal;
-        detalle.prdt_titulo = Titulacion.Text;
+        personal_detalle detalle = new personal_detalle() {
+          tppr_idtipoprofesion = Convert.ToInt32(TipoProfesionSelect.Value),
+          prdt_universidad = Universidad.Text,
+          prdt_grado = Convert.ToDateTime(FechaGraduacion.Text),
+          prsl_idpersonal = getCompetencia().prsl_idpersonal,
+          prdt_titulo = Titulacion.Text
+        };
 
         if (detalle.insert_personal_detalle()) {
           X.Msg.Notify(new NotificationConfig {
