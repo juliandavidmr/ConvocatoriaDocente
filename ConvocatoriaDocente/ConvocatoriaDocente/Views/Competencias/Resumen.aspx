@@ -11,26 +11,18 @@
   <form id="form1" runat="server">
     <ext:ResourceManager runat="server" />
 
-    <ext:Window
-      ID="Window1"
+    <ext:Viewport
       runat="server"
-      Width="400"
-      Floatable="false"
-      Height="800"
-      Title="Resumen"
-      Closable="false"
-      Layout="CenterLayout"
-      AutoScroll="true"
-      Header="true">
-      <Defaults>
-        <ext:Parameter Name="LabelWidth" Value="200" />
-      </Defaults>
+      Layout="FitLayout"
+      AutoScroll="true">
       <Items>
         <ext:FormPanel
           runat="server"
-          Header="false"
+          Header="true"
           BodyPadding="1"
-          Layout="ColumnLayout">
+          MarginSpec="5"
+          AutoScroll="true"
+          Flex="1">
 
           <FieldDefaults LabelAlign="Left" MsgTarget="Side" />
 
@@ -70,7 +62,7 @@
           </Items>
         </ext:FormPanel>
       </Items>
-    </ext:Window>
+    </ext:Viewport>
   </form>
 </body>
 </html>
