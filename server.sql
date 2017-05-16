@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - martes-mayo-16-2017   
+-- Archivo creado  - lunes-mayo-15-2017   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table ARCHIVO
@@ -3854,6 +3854,53 @@ BEGIN
             ROLLBACK TO UPDATE_BAR;
             RAISE;
 END PR_INSERT_PROFESIONAL_DET;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure PR_RESUMEN_BY_DOCENTE
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "CONVOCATORIA"."PR_RESUMEN_BY_DOCENTE" (
+  CR_RESULT OUT SYS_REFCURSOR,
+  ID_DOCENTE NUMBER
+) AS
+BEGIN
+OPEN CR_RESULT FOR
+    SELECT 
+        DT.*, 
+        CP.*, 
+        PAIS1.PAIS_NOMBRE NACIONALIDAD,
+        DOCE.DCCA_PUNTAJE_TOTAL,
+        INVE.INVN_PUNTAJE_TOTAL,
+        PERS.PRSL_PUNTAJE_TOTAL,
+        PROD.PRCN_PUNTAJE_TOTAL,
+        PROF.PNAL_PUNTAJE_TOTAL,
+        (
+            DOCE.DCCA_PUNTAJE_TOTAL 
+            + INVE.INVN_PUNTAJE_TOTAL
+            + PERS.PRSL_PUNTAJE_TOTAL
+            + PROD.PRCN_PUNTAJE_TOTAL
+            + PROF.PNAL_PUNTAJE_TOTAL
+        ) PUNTAJE_TOTAL
+        FROM DOCENTE DT
+        INNER JOIN COMPETENCIA CP
+            ON CP.DCNT_IDDOCENTE = ID_DOCENTE
+        LEFT JOIN DOCENCIA DOCE
+            ON DOCE.DCCA_IDDOCENCIA = CP.DCCA_IDDOCENCIA
+        LEFT JOIN INVESTIGACION INVE
+            ON INVE.INVN_IDINVESTIGACION = CP.INVN_IDINVESTIGACION
+        LEFT JOIN PERSONAL PERS
+            ON PERS.PRSL_IDPERSONAL = CP.PRSL_IDPERSONAL
+        LEFT JOIN PRODUCCION PROD
+            ON PROD.PRCN_IDPRODUCCION = CP.PRCN_IDPRODUCCION
+        LEFT JOIN PROFESIONAL PROF
+            ON PROF.PNAL_IDPROFESIONAL = CP.PNAL_IDPROFESIONAL
+        LEFT JOIN PAIS PAIS1
+            ON PAIS1.PAIS_IDPAIS = DT.PAIS_IDPAIS_NACIONALIDAD
+        WHERE DT.DCNT_IDDOCENTE = ID_DOCENTE
+        ORDER BY DT.DCNT_FECHA_REGISTR ASC;
+END PR_RESUMEN_BY_DOCENTE;
 
 /
 --------------------------------------------------------

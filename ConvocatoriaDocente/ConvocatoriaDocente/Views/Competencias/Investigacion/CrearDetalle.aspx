@@ -104,7 +104,7 @@
               <ColumnModel>
                 <Columns>
                   <ext:RowNumbererColumn runat="server"></ext:RowNumbererColumn>
-                  <ext:Column runat="server" Flex="5" DataIndex="INVD_FINANCIADORA" Text="Finaciadora/Patrocinador"></ext:Column>
+                  <ext:Column runat="server" Flex="5" DataIndex="INVD_FINANCIADORA" Text="Financiadora/Patrocinador"></ext:Column>
                   <ext:Column runat="server" Flex="3" DataIndex="INVD_FECHA_INICIO" Text="Inicio"></ext:Column>
                   <ext:Column runat="server" Flex="3" DataIndex="INVD_FECHA_FIN" Text="Fin"></ext:Column>
                   <ext:Column runat="server" Flex="1" DataIndex="INVD_PUNTAJE" Text="Puntaje"></ext:Column>

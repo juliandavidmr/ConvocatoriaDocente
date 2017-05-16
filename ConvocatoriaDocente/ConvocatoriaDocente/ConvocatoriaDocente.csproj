@@ -253,6 +253,7 @@
     <Compile Include="Models\profesion.cs" />
     <Compile Include="Models\profesional.cs" />
     <Compile Include="Models\profesional_detalle.cs" />
+    <Compile Include="Models\resumen.cs" />
     <Compile Include="Models\soporte.cs" />
     <Compile Include="Models\tipo_documento.cs" />
     <Compile Include="Models\tipo_profesion.cs" />
